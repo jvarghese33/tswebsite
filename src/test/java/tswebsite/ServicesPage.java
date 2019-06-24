@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 
 
-public class WorkPage {
+public class ServicesPage {
 
     WebDriver driver;
 
@@ -18,7 +18,7 @@ public class WorkPage {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/tsd057/IdeaProjects/tswebsite/src/main/resources/chromedriver 2");
         driver = new ChromeDriver();
-        driver.get("https://www.tribalscale.com/work");
+        driver.get("https://www.tribalscale.com/services");
     }
     @Test (priority = 2)
     public void checkingForFirstImage() {
@@ -73,6 +73,6 @@ public class WorkPage {
 
     @AfterClass
     public void tearDown() {
-        driver.quit();
+       // driver.quit();
     }
 }
