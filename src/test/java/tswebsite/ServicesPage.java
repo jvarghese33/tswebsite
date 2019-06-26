@@ -2,6 +2,7 @@ package tswebsite;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
@@ -20,11 +21,18 @@ public class ServicesPage {
         driver = new ChromeDriver();
         driver.get("https://www.tribalscale.com/services");
     }
+    @Test
+    public void checkHeader() {
+        driver.findElement(By.xpath("//*[@id=\"___gatsby\"]/div/div[2]/div/div[1]/h1"));
+        Assert.assertEquals("OUR SERVICES", driver.findElement(By.xpath("//*[@id=\"___gatsby\"]/div/div[2]/div/div[1]/h1")).getText());
+
+    }
     @Test (priority = 2)
     public void checkingForFirstImage() {
         WebElement element = driver.findElement(By.id("blockOneImageSmall"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
+        Assert.assertTrue(driver.findElement(By.id("blockOneImageSmall")).isDisplayed());
     }
     @Test (priority = 3)
     public void checkingForSecondImage() {
@@ -32,6 +40,7 @@ public class ServicesPage {
         WebElement element = driver.findElement(By.id("blockOneImageLarge"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
+        Assert.assertTrue(driver.findElement(By.id("blockOn-ImageLarge")).isDisplayed());
     }
 
     @Test (priority = 4)
