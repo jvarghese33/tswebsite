@@ -41,6 +41,7 @@ public class HomePage {
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
+
 //    @Test (priority = 5)
 //    public void scrollingDownToFourthSetOfImageTiles() {
 //        WebElement element = driver.findElement(By.id("blockFourthImageSmall"));
@@ -64,6 +65,6 @@ public class HomePage {
 
     @AfterClass
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
 }

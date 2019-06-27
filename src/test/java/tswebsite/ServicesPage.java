@@ -40,7 +40,7 @@ public class ServicesPage {
         WebElement element = driver.findElement(By.id("blockOneImageLarge"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
-        Assert.assertTrue(driver.findElement(By.id("blockOn-ImageLarge")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("blockOneImageLarge")).isDisplayed());
     }
 
     @Test (priority = 4)
@@ -49,6 +49,7 @@ public class ServicesPage {
         WebElement element = driver.findElement(By.id("blockTwoImageLarge"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
+        Assert.assertTrue(driver.findElement(By.id("blockTwoImageLarge")).isDisplayed());
     }
 
     @Test (priority = 5)
@@ -56,6 +57,13 @@ public class ServicesPage {
         WebElement element = driver.findElement(By.id("blockTwoImageSmall"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
+        Assert.assertTrue(driver.findElement(By.id("blockTwoImageSmall")).isDisplayed());
+    }
+
+    @Test (priority = 6)
+    public void checkForFirstHeader() {
+        driver.findElement(By.xpath("//*[@id=\"___gatsby\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/h1"));
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"___gatsby\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/h1")).isDisplayed());
     }
 
 
@@ -82,6 +90,6 @@ public class ServicesPage {
 
     @AfterClass
     public void tearDown() {
-       // driver.quit();
+        driver.quit();
     }
 }

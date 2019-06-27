@@ -55,7 +55,7 @@ public class WorkPage {
         }
         @AfterClass
         public void tearDown () {
-            // driver.quit();
+        driver.quit();
         }
 
     }
