@@ -67,26 +67,6 @@ public class ServicesPage {
     }
 
 
-//    @Test (priority = 2)
-//    public void checkingForSecondImage() {
-//        WebElement element = driver.findElement(By.id("blockOneImageSmall"));
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView();", element);
-//    }
-//
-//    @Test (priority = 3)
-//    public void scrollingDownToSecondSetOfImageTiles() {
-//        WebElement element = driver.findElement(By.id("blockTwoImageSmall"));
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView();", element);
-//    }
-//
-//    @Test (priority = 4)
-//    public void scrollingDownToThirdSetOfImageTiles() {
-//        WebElement element = driver.findElement(By.id("blockThreeImageSmall"));
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView();", element);
-//    }
 
     @AfterClass
     public void tearDown() {

@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 
+import java.util.ArrayList;
+
 
 public class Menu {
 
@@ -17,7 +19,6 @@ public class Menu {
         System.setProperty("webdriver.chrome.driver", "/Users/tsd057/IdeaProjects/tswebsite/src/main/resources/chromedriver 2");
         driver = new ChromeDriver();
         driver.get("https://www.tribalscale.com/");
-
     }
 
     @Test(priority = 2)
@@ -77,23 +78,72 @@ public class Menu {
     @Test(priority = 10)
     public void clickingFacebookButton() {
         driver.findElement(By.xpath("//*[@id=\"react-aria-modal-dialog\"]/div/div/div[2]/div/div[2]/div/div[1]/div[3]/a")).click();
-        driver.findElement(By.xpath("//*[@id=\"u_0_y\"]/div[2]/a/span[1]")).click();
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        driver.close();
+        driver.switchTo().window(tabs2.get(0));
 
-       // driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "w");
     }
-    @Test (priority = 11)
-    public void closingCurrentTab() {
-        try {
-            Thread.sleep(5000);
-            WebDriverWait wait = new WebDriverWait(driver, 30);
-        } catch (Throwable error) {
-            Assert.fail("Timeout waiting for Page Load Request to complete.");
-        }
-        driver.findElement(By.xpath("//*[@id=\"u_0_g\"]/div[7]/a")).sendKeys(Keys.COMMAND + "w");
+
+    @Test(priority = 11)
+    public void clickingTwitterButton() {
+        driver.findElement(By.xpath("//*[@id=\"react-aria-modal-dialog\"]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/a")).click();
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        driver.close();
+        driver.switchTo().window(tabs2.get(0));
+
+    }
+
+    @Test(priority = 12)
+    public void clickingLinkedinButton() {
+        driver.findElement(By.xpath("//*[@id=\"react-aria-modal-dialog\"]/div/div/div[2]/div/div[2]/div/div[1]/div[2]/a")).click();
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        driver.close();
+        driver.switchTo().window(tabs2.get(0));
+
+    }
+
+    @Test(priority = 13)
+    public void clickingInstagramButton() {
+        driver.findElement(By.xpath("//*[@id=\"react-aria-modal-dialog\"]/div/div/div[2]/div/div[2]/div/div[1]/div[4]/a")).click();
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        driver.close();
+        driver.switchTo().window(tabs2.get(0));
+    }
+
+    @Test(priority = 14)
+    public void clickingBlogButton() {
+        driver.findElement(By.xpath("//*[@id=\"react-aria-modal-dialog\"]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/a")).click();
+        driver.findElement(By.xpath("//*[@id=\"navContainer\"]/div/div")).click();
+    }
+
+    @Test(priority = 15)
+    public void clickingNewsletterButton() {
+        driver.findElement(By.xpath("//*[@id=\"react-aria-modal-dialog\"]/div/div/div[2]/div/div[2]/div/div[1]/div[4]/a")).click();
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        driver.close();
+        driver.switchTo().window(tabs2.get(0));
+    }
+    @Test(priority = 16)
+    public void clickingPrivacyButton() {
+        driver.findElement(By.xpath("//*[@id=\"react-aria-modal-dialog\"]/div/div/div[2]/div/div[2]/div/div[2]/div[3]/a")).click();
+        driver.findElement(By.xpath("//*[@id=\"navContainer\"]/div/div")).click();
+    }
+    @Test(priority = 17)
+    public void checkingForOfficeLocation() {
+
+
     }
 
     @AfterClass
     public void tearDown() {
+
+        driver.quit();
     }
-//      driver.quit();
+
+
 }
